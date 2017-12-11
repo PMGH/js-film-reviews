@@ -25,10 +25,15 @@ var Films = function(){
     actors: ["Harrison Ford", "Alec Guiness"]
   });
 
+  var film3 = new Film({
+    title: "Hot Fuzz",
+    actors: ["Simon Pegg", "Nick Frost"]
+  });
+
   film1.addReview(review1);
   film2.addReview(review2);
 
-  return [film1, film2];
+  return [film1, film2, film3];
 }
 
 module.exports = Films;
