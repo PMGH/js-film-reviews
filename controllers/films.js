@@ -13,6 +13,10 @@ filmRouter.get('/', function(req, res){
 });
 
 // create film
+filmRouter.post('/', function(req, res){
+  films.push(req.body);
+  res.json({ data: films });
+});
 
 // get film by id
 filmRouter.get('/:id', function(req, res){
