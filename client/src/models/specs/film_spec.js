@@ -7,7 +7,8 @@ describe('Film', function () {
   beforeEach(function () {
     film = new Film({
       title: "Titanic",
-      genres: ["Drama"]
+      actors: ["Leonardo Di Caprio", "Kate Winslet"],
+      reviews: ["This film is great, 5 whole starts!", "The film went down like the titanic, 1 star"]
     });
   });
 
@@ -15,4 +16,17 @@ describe('Film', function () {
     assert.equal(film.title, "Titanic");
   });
 
-})
+  it('should have actors', function(){
+    assert.strictEqual(film.actors.length, 2);
+    assert.strictEqual(film.actors[0], "Leonardo Di Caprio");
+    assert.strictEqual(film.actors[1], "Kate Winslet");
+  });
+
+  it('should have reviews', function(){
+    assert.strictEqual(film.reviews.length, 2);
+    assert.strictEqual(film.reviews[0], "This film is great, 5 whole starts!");
+    assert.strictEqual(film.reviews[1], "The film went down like the titanic, 1 star");
+  })
+
+
+});

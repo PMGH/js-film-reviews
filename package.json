@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha client/src/models/specs",
-    "start": "nodemon server",
+    "start": "nodemon server.js",
     "webpack": "cd client && webpack -w"
   },
   "author": "",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
-    "mocha": "^3.0.2",
+    "mocha": "^3.5.3",
     "webpack": "^2.6.0"
   },
   "repository": {
