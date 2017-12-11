@@ -101,9 +101,13 @@ UI.prototype = {
     for(var film of films) {
       var li = document.createElement("li");
       this.appendText(li, film.title, "Film: ");
-      
+
       for(var review of film.reviews){
         this.createReview(li, review);
+      }
+
+      if (film.genres.length > 0){
+        this.appendText(li, film.genres, `Genre${film.genres.length > 1 ? 's' : ''}: `);
       }
       container.appendChild(li);
     }
@@ -111,6 +115,7 @@ UI.prototype = {
 }
 
 module.exports = UI;
+
 
 /***/ }),
 /* 1 */
@@ -132,7 +137,7 @@ window.addEventListener('load', app);
 var Film = function(options){
   this.title = options.title;
   this.actors = options.actors;
-  this.genres = options.genres;
+  this.genres = options.genres || [];
   this.reviews = options.reviews || [];
 }
 
@@ -173,12 +178,14 @@ var Films = function(){
 
   var film2 = new Film({
     title: "Star Wars Episode IV: A New Hope",
-    actors: ["Harrison Ford", "Alec Guiness"]
+    actors: ["Harrison Ford", "Alec Guiness"],
+    genres: ["Action"]
   });
 
   var film3 = new Film({
     title: "Hot Fuzz",
-    actors: ["Simon Pegg", "Nick Frost"]
+    actors: ["Simon Pegg", "Nick Frost"],
+    genres: ["Comedy", "Action"]
   });
 
   film1.addReview(review1);

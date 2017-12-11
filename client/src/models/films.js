@@ -22,12 +22,14 @@ var Films = function(){
 
   var film2 = new Film({
     title: "Star Wars Episode IV: A New Hope",
-    actors: ["Harrison Ford", "Alec Guiness"]
+    actors: ["Harrison Ford", "Alec Guiness"],
+    genres: ["Action"]
   });
 
   var film3 = new Film({
     title: "Hot Fuzz",
-    actors: ["Simon Pegg", "Nick Frost"]
+    actors: ["Simon Pegg", "Nick Frost"],
+    genres: ["Comedy", "Action"]
   });
 
   film1.addReview(review1);
