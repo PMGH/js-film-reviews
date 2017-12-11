@@ -20,5 +20,9 @@ describe('Review', function () {
     assert.strictEqual(review.rating, 0);
   });
 
+  it('should have an author', function(){
+    assert.strictEqual(review.author, "Dave");
+  });
+
 
 });
