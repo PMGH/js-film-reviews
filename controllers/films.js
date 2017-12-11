@@ -5,9 +5,23 @@ var Film = require('../client/src/models/film');
 var Review = require('../client/src/models/review');
 
 var filmRouter = new express.Router();
+var films = films();
 
+// get all films
 filmRouter.get('/', function(req, res){
-  res.json({ data: films() });
+  res.json({ data: films });
 });
+
+// create film
+
+// get film by id
+filmRouter.get('/:id', function(req, res){
+  var film = films[req.params.id];
+  res.json({ film });
+});
+
+// update film by id
+
+// delete film by id
 
 module.exports = filmRouter;
