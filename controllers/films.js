@@ -3,3 +3,11 @@ var express = require('express');
 var films = require('../client/src/models/films');
 var Film = require('../client/src/models/film');
 var Review = require('../client/src/models/review');
+
+var filmRouter = new express.Router();
+
+filmRouter.get('/', function(req, res){
+  res.json({ data: films() });
+});
+
+module.exports = filmRouter;
