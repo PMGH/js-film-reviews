@@ -25,6 +25,10 @@ filmRouter.get('/:id', function(req, res){
 });
 
 // update film by id
+filmRouter.put('/:id', function(req, res){
+  films[req.params.id] = req.body;
+  res.json({ data: films });
+});
 
 // delete film by id
 
