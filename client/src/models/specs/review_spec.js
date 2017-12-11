@@ -16,5 +16,9 @@ describe('Review', function () {
     assert.strictEqual(review.comment, "I'll never get that time back.");
   });
 
+  it('should have a rating', function(){
+    assert.strictEqual(review.rating, 0);
+  });
+
 
 });
