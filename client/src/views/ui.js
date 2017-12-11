@@ -29,9 +29,13 @@ UI.prototype = {
     for(var film of films) {
       var li = document.createElement("li");
       this.appendText(li, film.title, "Film: ");
-      
+
       for(var review of film.reviews){
         this.createReview(li, review);
+      }
+
+      if (film.genres.length > 0){
+        this.appendText(li, film.genres, `Genre${film.genres.length > 1 ? 's' : ''}: `);
       }
       container.appendChild(li);
     }
